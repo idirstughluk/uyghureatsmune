@@ -184,7 +184,7 @@ section {
     height: 150px;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
-    border-radius: 5px Lund
+    border-radius: 5px;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -238,6 +238,11 @@ section {
     .menu-item:hover {
         transform: none; /* Disable scale on hover */
     }
+}
+
+/* Appetizers, Main Dish, and Drinks Section */
+#appetizers-main-drinks {
+    text-align: center;
 }
 
 /* About and Contact */
@@ -340,6 +345,10 @@ footer a {
         position: static; /* Stack price below description on mobile */
         align-self: flex-end;
         margin-top: 0.5rem;
+    }
+
+    #appetizers-main-drinks h2 {
+        font-size: 2rem;
     }
 }
 
