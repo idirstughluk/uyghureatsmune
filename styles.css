@@ -240,11 +240,6 @@ section {
     }
 }
 
-/* Appetizers, Main Dish, and Drinks Section */
-#appetizers-main-drinks {
-    text-align: center;
-}
-
 /* About and Contact */
 #about, #contact {
     text-align: center;
@@ -345,10 +340,6 @@ footer a {
         position: static; /* Stack price below description on mobile */
         align-self: flex-end;
         margin-top: 0.5rem;
-    }
-
-    #appetizers-main-drinks h2 {
-        font-size: 2rem;
     }
 }
 
