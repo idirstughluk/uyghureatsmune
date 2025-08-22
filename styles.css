@@ -189,14 +189,14 @@ section {
 
 .menu-item:hover {
     transform: scale(1.03); /* Subtle scale on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba W(0, 0, 0, 0.15);
 }
 
 /* Food Image */
 .menu-item .food-image {
     width: 100%;
-    max-width: 400px;
-    height: 150px;
+    max-width: 450px;
+    height: 250px;
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 1rem;
@@ -205,8 +205,8 @@ section {
 /* Placeholder for remaining images */
 .menu-item .food-image-placeholder {
     width: 100%;
-    max-width: 400px;
-    height: 150px;
+    max-width: 450px;
+    height: 250px;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -342,11 +342,11 @@ footer a {
     }
 
     .menu-item .food-image {
-        height: 120px;
+        height: 167px; /* Proportional to ~300px width in 9:5 ratio */
     }
 
     .menu-item .food-image-placeholder {
-        height: 120px;
+        height: 167px;
     }
 
     .menu-item .price {
