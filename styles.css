@@ -192,9 +192,20 @@ section {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Placeholder for food image */
+/* Food Image */
+.menu-item .food-image {
+    width: 100%;
+    max-width: 400px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+/* Placeholder for remaining images */
 .menu-item .food-image-placeholder {
     width: 100%;
+    max-width: 400px;
     height: 150px;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
@@ -328,6 +339,10 @@ footer a {
 
     .menu-grid {
         grid-template-columns: 1fr;
+    }
+
+    .menu-item .food-image {
+        height: 120px;
     }
 
     .menu-item .food-image-placeholder {
