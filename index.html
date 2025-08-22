@@ -17,9 +17,9 @@
                 <li class="nav-toggle">
                     <button class="hamburger" onclick="toggleMenu()">☰</button>
                     <ul class="dropdown-menu">
-                        <li><a href="#menu">Menu</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#menu" onclick="toggleMenu()">Menu</a></li>
+                        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
                     </ul>
                 </li>
             </ul>
@@ -356,6 +356,7 @@
 
     <script>
         function toggleMenu() {
+            console.log('Hamburger clicked'); // Debug log
             const dropdown = document.querySelector('.dropdown-menu');
             dropdown.classList.toggle('show');
         }
