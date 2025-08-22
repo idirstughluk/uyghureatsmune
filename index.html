@@ -11,13 +11,15 @@
         <div class="nav-container">
             <ul class="nav-links">
                 <li class="home-link"><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li class="nav-toggle">
                     <button class="hamburger" onclick="toggleMenu()">☰</button>
                     <ul class="dropdown-menu">
-                        <li><a href="#menu">Menu</a></li>
-                        <li><a href="#appetizers-main-drinks">Appetizers, Main Dish, and Drinks</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#appetizers">Appetizers</a></li>
+                        <li><a href="#main-dishes">Main Dishes</a></li>
+                        <li><a href="#drinks">Drinks</a></li>
                     </ul>
                 </li>
             </ul>
@@ -36,7 +38,7 @@
     <section id="menu">
         <h2>Our Menu</h2>
 
-        <div class="category">
+        <div class="category" id="appetizers">
             <h3>Appetizers</h3>
             <div class="menu-grid">
                 <div class="menu-item">
@@ -90,7 +92,7 @@
             </div>
         </div>
 
-        <div class="category">
+        <div class="category" id="main-dishes">
             <h3>Main Dishes</h3>
             <h4>Noodles & Lagman</h4>
             <div class="menu-grid">
@@ -289,7 +291,7 @@
             </div>
         </div>
 
-        <div class="category">
+        <div class="category" id="drinks">
             <h3>Drinks</h3>
             <div class="menu-grid">
                 <div class="menu-item">
@@ -326,11 +328,6 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="appetizers-main-drinks">
-        <h2>Appetizers, Main Dish, and Drinks</h2>
-        <p>Explore our diverse selection of appetizers, hearty main dishes, and refreshing drinks. From flaky samsa and savory lagman to creamy Uyghur milk tea, each item is crafted with authentic recipes to delight your palate.</p>
     </section>
 
     <section id="about">
