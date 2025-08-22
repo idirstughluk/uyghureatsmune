@@ -263,6 +263,7 @@ footer a {
     .nav-container {
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
     }
 
     .nav-links {
@@ -281,6 +282,10 @@ footer a {
 
     .hamburger {
         display: block;
+    }
+
+    .nav-link-hidden {
+        display: none; /* Hide Menu, About, Contact links on mobile */
     }
 
     .dropdown-menu {
@@ -351,6 +356,10 @@ footer a {
 
     .nav-links li {
         display: inline-block;
+    }
+
+    .nav-link-hidden {
+        display: inline-block; /* Show Menu, About, Contact links on desktop */
     }
 
     .nav-toggle {
