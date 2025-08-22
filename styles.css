@@ -184,7 +184,7 @@ section {
     height: 150px;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 5px Lund
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -218,24 +218,6 @@ section {
     top: 0;
 }
 
-.menu-item .add-to-order {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 0.5rem;
-    align-self: flex-start;
-}
-
-.menu-item .add-to-order:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -255,9 +237,6 @@ section {
     }
     .menu-item:hover {
         transform: none; /* Disable scale on hover */
-    }
-    .add-to-order:hover {
-        transform: none; /* Disable button scale */
     }
 }
 
@@ -358,13 +337,9 @@ footer a {
     }
 
     .menu-item .price {
-        position: static; /* Stack price below button on mobile */
+        position: static; /* Stack price below description on mobile */
         align-self: flex-end;
         margin-top: 0.5rem;
-    }
-
-    .menu-item .add-to-order {
-        align-self: stretch; /* Full width button on mobile */
     }
 }
 
