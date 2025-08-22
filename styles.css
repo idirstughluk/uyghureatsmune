@@ -93,6 +93,20 @@ nav {
 
 .dropdown-menu {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.dropdown-menu.show {
+    display: flex;
 }
 
 /* Hero Section */
@@ -285,28 +299,7 @@ footer a {
     }
 
     .nav-link-hidden {
-        display: none; /* Hide Menu, About, Contact links on mobile */
-    }
-
-    .dropdown-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 0.5rem;
-        z-index: 999;
-    }
-
-    .dropdown-menu.show {
-        display: flex;
-    }
-
-    .dropdown-menu li {
-        margin: 0;
+        display: none !important; /* Hide Menu, About, Contact links on mobile */
     }
 
     .dropdown-menu li a {
@@ -359,7 +352,7 @@ footer a {
     }
 
     .nav-link-hidden {
-        display: inline-block; /* Show Menu, About, Contact links on desktop */
+        display: inline-block !important; /* Show Menu, About, Contact links on desktop */
     }
 
     .nav-toggle {
