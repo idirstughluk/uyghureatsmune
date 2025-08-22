@@ -219,6 +219,14 @@ section {
     text-align: center;
 }
 
+/* Horizontal Line */
+.menu-item hr {
+    border: none;
+    border-top: 1px solid #007bff;
+    margin: 0.5rem 0;
+}
+
+/* Menu Item Content */
 .menu-item-content {
     display: flex;
     flex-direction: column;
@@ -236,11 +244,11 @@ section {
 }
 
 .menu-item .price {
-    font-weight: bold;
-    color: #222;
-    position: absolute;
-    right: 0;
-    top: 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #007bff;
+    position: static;
+    margin-top: 0.5rem;
 }
 
 /* Animations */
@@ -349,12 +357,6 @@ footer a {
     .menu-item .food-image-placeholder {
         max-width: 250px;
         height: 167px;
-    }
-
-    .menu-item .price {
-        position: static; /* Stack price below description on mobile */
-        align-self: flex-end;
-        margin-top: 0.5rem;
     }
 }
 
