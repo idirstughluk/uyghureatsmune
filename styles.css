@@ -166,10 +166,15 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0; /* For fade-in animation */
+}
+
+.menu-item.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
 }
 
 .menu-item:hover {
-    transform: translateY(-5px);
+    transform: scale(1.03); /* Subtle scale on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -189,6 +194,12 @@ section {
     text-align: center;
 }
 
+.menu-item-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
 .menu-item h4 {
     margin: 0 0 0.5rem;
     color: #007bff;
@@ -202,6 +213,52 @@ section {
 .menu-item .price {
     font-weight: bold;
     color: #222;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.menu-item .add-to-order {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 0.5rem;
+    align-self: flex-start;
+}
+
+.menu-item .add-to-order:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .menu-item {
+        opacity: 1; /* Disable fade-in for reduced motion */
+    }
+    .menu-item:hover {
+        transform: none; /* Disable scale on hover */
+    }
+    .add-to-order:hover {
+        transform: none; /* Disable button scale */
+    }
 }
 
 /* About and Contact */
@@ -280,7 +337,7 @@ footer a {
     }
 
     .nav-logo img {
-        max-width: 80px; /* Smaller logo for mobile */
+        max-width: 80px;
     }
 
     #home h1 {
@@ -299,6 +356,16 @@ footer a {
     .menu-item .food-image-placeholder {
         height: 120px;
     }
+
+    .menu-item .price {
+        position: static; /* Stack price below button on mobile */
+        align-self: flex-end;
+        margin-top: 0.5rem;
+    }
+
+    .menu-item .add-to-order {
+        align-self: stretch; /* Full width button on mobile */
+    }
 }
 
 @media (min-width: 769px) {
@@ -312,6 +379,6 @@ footer a {
     }
 
     .nav-toggle {
-        display: none; /* Hide hamburger and dropdown on desktop */
+        display: none;
     }
 }
