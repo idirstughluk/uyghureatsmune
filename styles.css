@@ -1,5 +1,5 @@
 /* Global Styles */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500&family=Montserrat:wght@500&display=swap');
 
 body {
     margin: 0;
@@ -222,7 +222,7 @@ section {
 /* Horizontal Line */
 .menu-item hr {
     border: none;
-    border-top: 1px solid #007bff;
+    border-top: 1px solid #584c47;
     margin: 0.5rem 0;
 }
 
@@ -235,7 +235,9 @@ section {
 
 .menu-item h4 {
     margin: 0 0 0.5rem;
-    color: #007bff;
+    color: #584c47;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
 .menu-item p {
