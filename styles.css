@@ -109,7 +109,113 @@ nav {
     display: flex;
 }
 
-/* Hero Section */
+/* Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-position: center;
+}
+
+.slider .slide.active {
+    opacity: 1;
+}
+
+.slider .slide h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.slider .slide p {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+}
+
+.slider .slide button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Lora', serif;
+}
+
+.slider .slide button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.slider .prev, .slider .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slider .prev {
+    left: 1rem;
+}
+
+.slider .next {
+    right: 1rem;
+}
+
+.slider .dots {
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.slider .dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.slider .dot.active {
+    background: white;
+}
+
+/* Original Hero Section (Commented Out) */
+/*
 #home {
     height: 100vh;
     background-image: url('https://source.unsplash.com/random/1920x1080/?uyghur,food');
@@ -143,6 +249,7 @@ nav {
     background-color: #0056b3;
     transform: scale(1.05);
 }
+*/
 
 /* Sections */
 section {
@@ -273,6 +380,9 @@ section {
     .menu-item:hover {
         transform: none; /* Disable scale on hover */
     }
+    .slider .slide {
+        transition: none; /* Disable slider transitions */
+    }
 }
 
 /* About and Contact */
@@ -338,11 +448,15 @@ footer a {
         max-width: 80px;
     }
 
-    #home h1 {
+    .slider .slide h1 {
         font-size: 2.5rem;
     }
 
-    #home button {
+    .slider .slide p {
+        font-size: 1rem;
+    }
+
+    .slider .slide button {
         font-size: 1rem;
         padding: 0.8rem 1.5rem;
     }
