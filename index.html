@@ -29,10 +29,29 @@
         </div>
     </nav>
 
-    <section id="home">
-        <h1>Uyghur Eats</h1>
-        <p>Discover the rich flavors of authentic Uyghur cuisine</p>
-        <button onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">View Menu</button>
+    <section id="home" class="slider">
+        <div class="slide" style="background-image: url('https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/3320d2437191c172cee99ff73a29b23bb2b4cbc7/images/slider_01.png');">
+            <h1>Hand-Pulled Lagman</h1>
+            <p>Savor the rich, savory flavors of our hand-pulled noodles in a hearty broth.</p>
+            <button onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">View Menu</button>
+        </div>
+        <div class="slide" style="background-image: url('https://source.unsplash.com/random/1920x1080/?uyghur,rice');">
+            <h1>Uyghur Polo</h1>
+            <p>Indulge in our classic rice pilaf with succulent lamb and sweet carrots.</p>
+            <button onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">View Menu</button>
+        </div>
+        <div class="slide" style="background-image: url('https://source.unsplash.com/random/1920x1080/?uyghur,kebab');">
+            <h1>Grilled Kebabs</h1>
+            <p>Enjoy juicy, grilled skewers bursting with authentic Uyghur spices.</p>
+            <button onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">View Menu</button>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
     </section>
 
     <section id="menu">
@@ -471,6 +490,49 @@
             menuItems.forEach(item => {
                 observer.observe(item);
             });
+
+            // Slider functionality
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.slider .slide');
+            const dots = document.querySelectorAll('.slider .dot');
+            let slideInterval;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    dots[i].classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                        dots[i].classList.add('active');
+                    }
+                });
+            }
+
+            function changeSlide(n) {
+                slideIndex = (slideIndex + n + slides.length) % slides.length;
+                showSlide(slideIndex);
+                resetInterval();
+            }
+
+            function currentSlide(n) {
+                slideIndex = n;
+                showSlide(slideIndex);
+                resetInterval();
+            }
+
+            function autoSlide() {
+                slideIndex = (slideIndex + 1) % slides.length;
+                showSlide(slideIndex);
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(autoSlide, 5000);
+            }
+
+            // Initialize slider
+            showSlide(slideIndex);
+            slideInterval = setInterval(autoSlide, 5000);
         });
     </script>
 </body>
