@@ -12,13 +12,17 @@
         <div class="nav-container">
             <ul class="nav-links">
                 <li class="home-link"><a href="#home">Home</a></li>
-                <li><a href="#menu" class="nav-link-hidden">Menu</a></li>
+                <li><a href="#appetizers" class="nav-link-hidden">Appetizers</a></li>
+                <li><a href="#main-dishes" class="nav-link-hidden">Main Dishes</a></li>
+                <li><a href="#drinks" class="nav-link-hidden">Drinks</a></li>
                 <li><a href="#about" class="nav-link-hidden">About</a></li>
                 <li><a href="#contact" class="nav-link-hidden">Contact</a></li>
                 <li class="nav-toggle">
                     <button class="hamburger" onclick="toggleMenu()">☰</button>
                     <ul class="dropdown-menu">
-                        <li><a href="#menu" onclick="toggleMenu()">Menu</a></li>
+                        <li><a href="#appetizers" onclick="toggleMenu()">Appetizers</a></li>
+                        <li><a href="#main-dishes" onclick="toggleMenu()">Main Dishes</a></li>
+                        <li><a href="#drinks" onclick="toggleMenu()">Drinks</a></li>
                         <li><a href="#about" onclick="toggleMenu()">About</a></li>
                         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
                     </ul>
@@ -32,13 +36,13 @@
 
     <section id="home" class="slider">
         <div class="slide" style="background-image: url('https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/4bd68c2bd97ea0719306b9e309648bcdeec0275d/images/slider_01.png');">
-            <button onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">View Menu</button>
+            <button onclick="document.getElementById('appetizers').scrollIntoView({behavior: 'smooth'})">View Menu</button>
         </div>
         <div class="slide" style="background-image: url('https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/3539df3764b6d769f56e90f0e7c4144c3e3bae81/images/slider_02.png');">
-            <button onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">View Menu</button>
+            <button onclick="document.getElementById('appetizers').scrollIntoView({behavior: 'smooth'})">View Menu</button>
         </div>
         <div class="slide" style="background-image: url('https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/main/images/slider_03.png');">
-            <button onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">View Menu</button>
+            <button onclick="document.getElementById('appetizers').scrollIntoView({behavior: 'smooth'})">View Menu</button>
         </div>
         <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
         <button class="next" onclick="changeSlide(1)">&#10095;</button>
@@ -52,7 +56,7 @@
     <section id="menu">
         <h2>Our Menu</h2>
 
-        <div class="category">
+        <div class="category" id="appetizers">
             <h3>Appetizers</h3>
             <div class="menu-grid">
                 <div class="menu-item">
@@ -112,7 +116,7 @@
             </div>
         </div>
 
-        <div class="category">
+        <div class="category" id="main-dishes">
             <h3>Main Dishes</h3>
             <h4>Noodles & Lagman</h4>
             <div class="menu-grid">
@@ -396,7 +400,7 @@
             </div>
         </div>
 
-        <div class="category">
+        <div class="category" id="drinks">
             <h3>Drinks</h3>
             <div class="menu-grid">
                 <div class="menu-item">
