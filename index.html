@@ -3,470 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uyghur Eats - Authentic Uyghur Cuisine</title>
+    <title>Uyghur Eats | Modern Menu</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Your existing styles + minor tweaks for images */
+        .menu-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .price {
+            background: #C8102E;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        /* Add more from your previous CSS if needed */
+    </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li class="home-link"><a href="#home">Home</a></li>
-                <li><a href="#appetizers" class="nav-link-hidden">Appetizers</a></li>
-                <li><a href="#main-dishes" class="nav-link-hidden">Main Dishes</a></li>
-                <li><a href="#drinks" class="nav-link-hidden">Drinks</a></li>
-                <li><a href="#about" class="nav-link-hidden">About</a></li>
-                <li><a href="#contact" class="nav-link-hidden">Contact</a></li>
-                <li class="nav-toggle">
-                    <button class="hamburger" onclick="toggleMenu()">☰</button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#appetizers" onclick="toggleMenu()">Appetizers</a></li>
-                        <li><a href="#main-dishes" onclick="toggleMenu()">Main Dishes</a></li>
-                        <li><a href="#drinks" onclick="toggleMenu()">Drinks</a></li>
-                        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="nav-logo">
-                <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/dac5535b1871dcd63bec437ff84091433cfc92b5/images/uyghureatslogo.png" alt="Uyghur Eats Logo">
-            </div>
-        </div>
-    </nav>
+    <header class="header">
+        <h1>UYGHUR EATS</h1>
+        <p>A Taste of Tradition and Excellence</p>
+    </header>
 
-    <section id="home" class="slider">
-        <div class="slide" style="background-image: url('https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/4bd68c2bd97ea0719306b9e309648bcdeec0275d/images/slider_01.png');">
-            <button onclick="document.getElementById('appetizers').scrollIntoView({behavior: 'smooth'})">View Menu</button>
-        </div>
-        <div class="slide" style="background-image: url('https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/3539df3764b6d769f56e90f0e7c4144c3e3bae81/images/slider_02.png');">
-            <button onclick="document.getElementById('appetizers').scrollIntoView({behavior: 'smooth'})">View Menu</button>
-        </div>
-        <div class="slide" style="background-image: url('https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/main/images/slider_03.png');">
-            <button onclick="document.getElementById('appetizers').scrollIntoView({behavior: 'smooth'})">View Menu</button>
-        </div>
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
-        <div class="dots">
-            <span class="dot" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-    </section>
+    <main class="menu-grid" id="menu-container"></main>
 
-    <section id="menu">
-        <h2>Our Menu</h2>
-
-        <div class="category" id="appetizers">
-            <h3>Appetizers</h3>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Samsa</h4>
-                        <hr>
-                        <p>Flaky, golden-baked pastry filled with seasoned meat, onions, and aromatic spices.</p>
-                        <span class="price">$3.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/145c680c6622882bf6f0dd3567ee5ca921c5c8e3/images/goshnan.png" alt="Gosh Nan - Traditional Uyghur flatbread" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Gosh Nan</h4>
-                        <hr>
-                        <p>Traditional Uyghur flatbread with a soft, chewy texture; perfect for dipping in stews.</p>
-                        <span class="price">$22.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/ef6c89b51a8417df77f2a2ffa97ce2f8d9bfdf29/images/butternan.png" alt="Butter Nan - Freshly baked bread with butter" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Butter Nan</h4>
-                        <hr>
-                        <p>Freshly baked bread brushed with rich, melted butter; warm and fragrant.</p>
-                        <span class="price">$3.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/dcbc92a3643f936423b1bfdd618b014e297342c7/images/katlima.png" alt="Katlama Nan" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Katlama Nan</h4>
-                        <hr>
-                        <p>Layered, flaky flatbread, lightly fried to a crisp outside while soft inside.</p>
-                        <span class="price">$4.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Cucumber Salad</h4>
-                        <hr>
-                        <p>Crisp cucumber slices tossed with garlic, vinegar, and a hint of chili.</p>
-                        <span class="price">$9.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Eggplant Salad</h4>
-                        <hr>
-                        <p>Smoky roasted eggplant blended with garlic, tomato, and subtle spices.</p>
-                        <span class="price">$9.99</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="category" id="main-dishes">
-            <h3>Main Dishes</h3>
-            <h4>Noodles & Lagman</h4>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/97084d386a79845c36dcd8e73c2039d7021b02ab/images/guyrulaghman.png" alt="Goyro Lagman - Hand-pulled noodles with beef and vegetables" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Goyro Lagman</h4>
-                        <hr>
-                        <p>Hand-pulled noodles with tender beef, fresh vegetables, and a rich savory sauce.</p>
-                        <span class="price">$19.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/d171a8c8e82b4e36903c3db6bf3d5b5d4e850419/images/suyrulaghman.png" alt="Suyro Lagman - Spicy stir-fried noodles with meat and peppers" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Suyro Lagman</h4>
-                        <hr>
-                        <p>Spicy noodles stir-fried with meat, peppers, and aromatic seasonings.</p>
-                        <span class="price">$19.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/97084d386a79845c36dcd8e73c2039d7021b02ab/images/eggplantlagman.png" alt="Eggplant Lagman - Noodles with eggplant and meat" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Eggplant Lagman</h4>
-                        <hr>
-                        <p>Soft noodles tossed with tender eggplant, meat, and a flavorful sauce.</p>
-                        <span class="price">$19.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/97084d386a79845c36dcd8e73c2039d7021b02ab/images/aklaghman.png" alt="Ak Lagman - Hand-pulled noodles in savory broth" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Ak Lagman</h4>
-                        <hr>
-                        <p>Hand-pulled noodles in a light, savory broth with fresh vegetables and meat.</p>
-                        <span class="price">$6.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Mampar Soman</h4>
-                        <hr>
-                        <p>Soft wheat noodles served in a mildly spiced sauce with vegetables.</p>
-                        <span class="price">$22.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/ddc7725491f8cc634f3c4f5f8b55992fb4b1da4a/images/ganbian-somen.png" alt="Ganbian Soman" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Ganbian Soman</h4>
-                        <hr>
-                        <p>Stir-fried noodles with your choice of chicken, beef, or lamb and crisp vegetables.</p>
-                        <span class="price">$19.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/ef6c89b51a8417df77f2a2ffa97ce2f8d9bfdf29/images/chop_somen.png" alt="Chop-Fried Soman - Crispy fried noodles with vegetables and meat" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Chop-Fried Soman</h4>
-                        <hr>
-                        <p>Crispy, golden-fried noodles mixed with fresh vegetables and savory meat.</p>
-                        <span class="price">$19.99</span>
-                    </div>
-                </div>
-            </div>
-
-            <h4>Chicken & Meat</h4>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/e0e8c90a1423bbcc66d0d4b48de9092c41645458/images/bigplatchichen.png" alt="Big Plate Chicken - Spicy chicken stew with noodles" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Big Plate Chicken (Small)</h4>
-                        <hr>
-                        <p>Spicy chicken stew with potatoes and hand-pulled noodles; a hearty and flavorful classic.</p>
-                        <span class="price">$34.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/5c30dd96915e2d77665b9554c4d782e79184428a/images/dapanji.png" alt="Big Plate Chicken Large - Spicy chicken stew with potatoes and noodles" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Big Plate Chicken (Large)</h4>
-                        <hr>
-                        <p>Large portion of spicy chicken stew with potatoes and hand-pulled noodles, perfect for sharing.</p>
-                        <span class="price">$54.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/5c30dd96915e2d77665b9554c4d782e79184428a/images/ganbianjinew.png" alt="Ganbianji - Stir-fried chicken with peppers and spices" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Ganbianji</h4>
-                        <hr>
-                        <p>Tender chicken stir-fried with peppers and spices, full of aromatic flavors.</p>
-                        <span class="price">$34.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Laziji (Small)</h4>
-                        <hr>
-                        <p>Crispy fried chicken with Sichuan-style peppers and bold seasonings.</p>
-                        <span class="price">$34.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Laziji (Large)</h4>
-                        <hr>
-                        <p>Large portion of crispy fried chicken with Sichuan-style peppers, ideal for sharing.</p>
-                        <span class="price">$54.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Fried Lamb Shank</h4>
-                        <hr>
-                        <p>Crispy fried lamb shank served with fresh nan, packed with rich flavors.</p>
-                        <span class="price">$20.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Tuhum Palak Kormisi</h4>
-                        <hr>
-                        <p>Egg and spinach stew with tender meat, cooked with aromatic Uyghur spices.</p>
-                        <span class="price">$15.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Tudusir</h4>
-                        <hr>
-                        <p>Traditional Uyghur meat dish with vegetables, slow-cooked for deep flavor.</p>
-                        <span class="price">$15.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Qiezi Qorma (Eggplant Stew)</h4>
-                        <hr>
-                        <p>Melt-in-your-mouth eggplant stewed with tender meat and fragrant spices.</p>
-                        <span class="price">$15.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/ef6c89b51a8417df77f2a2ffa97ce2f8d9bfdf29/images/maladoufu.png" alt="Mala Tofu - Silky tofu with chili and spices" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Mala Tofu</h4>
-                        <hr>
-                        <p>Silky tofu cooked with chili, garlic, and traditional Uyghur spices.</p>
-                        <span class="price">$15.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Jagdu Qorma</h4>
-                        <hr>
-                        <p>A rich mixed-meat stew with vegetables, slow-cooked for deep flavor.</p>
-                        <span class="price">$15.99</span>
-                    </div>
-                </div>
-            </div>
-
-            <h4>Kebabs & Grilled</h4>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/d171a8c8e82b4e36903c3db6bf3d5b5d4e850419/images/kazankabab.png" alt="Kazan Kebab - Slow-cooked skewers with lamb, beef, and chicken" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Kazan Kebab (Lamb, Beef, Chicken)</h4>
-                        <hr>
-                        <p>Slow-cooked skewers with a mix of tender meats and bold spices, served with rice.</p>
-                        <span class="price">$19.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Lamb Kebab</h4>
-                        <hr>
-                        <p>Juicy grilled lamb skewers with a hint of cumin and smoke.</p>
-                        <span class="price">$4.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Chicken Kebab</h4>
-                        <hr>
-                        <p>Tender grilled chicken skewers marinated in traditional Uyghur spices.</p>
-                        <span class="price">$4.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Scallion Lamb</h4>
-                        <hr>
-                        <p>Grilled lamb skewers with fresh scallions and aromatic spices, served with rice.</p>
-                        <span class="price">$19.99</span>
-                    </div>
-                </div>
-            </div>
-
-            <h4>Rice</h4>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/97084d386a79845c36dcd8e73c2039d7021b02ab/images/polo.png" alt="Uyghur Polo - Rice pilaf with lamb and carrots" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Uyghur Polo</h4>
-                        <hr>
-                        <p>Classic rice pilaf with succulent lamb, sweet carrots, and aromatic spices.</p>
-                        <span class="price">$23.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/65a6ed4316e59a10c6c3ac63528f91643373815e/images/chaomifen.png" alt="Chaomifen - Stir-fried rice noodles with vegetables and meat" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Chaomifen</h4>
-                        <hr>
-                        <p>Stir-fried rice noodles with vegetables and tender meat, full of savory flavors.</p>
-                        <span class="price">$19.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Danchaofen</h4>
-                        <hr>
-                        <p>Flavorful stir-fried rice with eggs, fresh vegetables, and meat; lightly seasoned and fragrant.</p>
-                        <span class="price">$12.49</span>
-                    </div>
-                </div>
-            </div>
-
-            <h4>Soups & Traditional Dishes</h4>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Chuchure</h4>
-                        <hr>
-                        <p>Handmade dumplings served in a rich, savory broth with fresh herbs.</p>
-                        <span class="price">$15.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Lamb Shank Soup</h4>
-                        <hr>
-                        <p>Hearty soup with tender lamb shank, simmered with herbs and spices for a deep flavor.</p>
-                        <span class="price">$22.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Suyuq Ash</h4>
-                        <hr>
-                        <p>Traditional hand-pulled noodle soup with meat, vegetables, and aromatic broth.</p>
-                        <span class="price">$12.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/ef6c89b51a8417df77f2a2ffa97ce2f8d9bfdf29/images/manta.png" alt="Manta - Steamed dumplings with seasoned meat" class="food-image" loading="lazy">
-                    <div class="menu-item-content">
-                        <h4>Manta</h4>
-                        <hr>
-                        <p>Steamed dumplings filled with seasoned meat, served hot and juicy (6 pieces).</p>
-                        <span class="price">$19.99</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="category" id="drinks">
-            <h3>Drinks</h3>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Uyghur Milk Tea</h4>
-                        <hr>
-                        <p>Creamy, spiced black tea brewed with milk; warm and comforting.</p>
-                        <span class="price">$3.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Black Tea</h4>
-                        <hr>
-                        <p>Traditional, freshly brewed black tea; rich and robust.</p>
-                        <span class="price">$2.99</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Ayran</h4>
-                        <hr>
-                        <p>Refreshing salted yogurt drink, perfect for cooling the palate.</p>
-                        <span class="price">$3.49</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="food-image-placeholder">Image Placeholder</div>
-                    <div class="menu-item-content">
-                        <h4>Soft Drinks / Water</h4>
-                        <hr>
-                        <p>Assorted beverages to accompany your meal.</p>
-                        <span class="price">$2.49</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Uyghur Eats brings the authentic flavors of Uyghur cuisine to your table. Our dishes are prepared with traditional recipes and fresh ingredients to provide an unforgettable dining experience.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Get in touch for reservations or inquiries.</p>
-        <p>Email: info@uyghureats.com</p>
-        <p>Phone: (123) 456-7890</p>
-    </section>
-
-    <footer>
-        <p>123 Main Street, City, State 12345</p>
-        <p>Phone: (123) 456-7890 | Email: info@uyghureats.com</p>
-        <p>Opening Hours: Mon-Sun 11AM - 10PM</p>
-        <p>
-            <a href="#">Facebook</a> |
-            <a href="#">Instagram</a> |
-            <a href="#">X</a>
-        </p>
-        <p>&copy; 2025 Uyghur Eats. All rights reserved.</p>
+    <footer class="footer">
+        <p>© 2026 Uyghur Eats | Toronto, Ontario</p>
     </footer>
 
+    <!-- Modal for zoom -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img id="modalImg" src="" alt="Dish">
+    </div>
+
     <script src="script.js"></script>
+    <script>
+        // script.js content (or inline)
+        const menuContainer = document.getElementById('menu-container');
+        const baseImgUrl = 'https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/main/image/'; // Use 'main' branch
+
+        const menuData = [
+            // Appetizers - replace filenames with yours (e.g. samsa.jpg)
+            { name: "Samsa (1 pc)", uy: "سامسا", desc: "Special Uyghur snack filled with beef and onion", price: "$2.99", img: "samsa.jpg" },
+            { name: "Cucumber salad", uy: "تەرخەمەك سالات", desc: "Made of cucumber, tomato and garlic", price: "$5.99", img: "cucumber-salad.jpg" },
+            { name: "Butter nan", uy: "سېرىق ماي نان", desc: "Traditional Uyghur-style flatbread with sesame", price: "$1.99", img: "butter-nan.jpg" },
+            { name: "Carrot salad", uy: "سەۋزە سالات", desc: "Made of carrot and chilies", price: "$6.99", img: "carrot-salad.jpg" },
+            { name: "Pancake", uy: "فوتوزماج", desc: "Stir fried, layered, flaky flat bread", price: "$2.99", img: "pancake.jpg" },
+            { name: "Eggplant salad", uy: "بېدىرەن سالات", desc: "Made of eggplant, tomato, soy sauce", price: "$7.99", img: "eggplant-salad.jpg" },
+
+            // Main Dishes (group 1)
+            { name: "Stir Fried Meat", uy: "قازان كاۋاپ", desc: "Stir fried beef with onion, cumin... (rice on side)", price: "$18.99", img: "stir-fried-meat.jpg" },
+            { name: "Lamb Pilaf", uy: "پولۇ", desc: "Traditional Uyghur food with lamb, rice and carrot", price: "$20.99", img: "lamb-pilaf.jpg" },
+            { name: "Fried Lamb Shank", uy: "قورۇغان قوي پاقالچىقى", desc: "Whole lamb shank fried with onion, served with nan", price: "$19.99", img: "fried-lamb-shank.jpg" },
+            { name: "Manta (5 Pcs)", uy: "مانتا", desc: "Steamed big dumplings with beef and onion", price: "$14.99", img: "manta.jpg" },
+            { name: "Scallian Lamb", uy: "پىيازلىق گۆش قورىمىسى", desc: "Tender lamb stir-fried with scallions", price: "$18.99", img: "scallian-lamb.jpg" },
+            { name: "Meat Pie", uy: "گۆش نان", desc: "Crispy baked pie with seasoned beef and onion", price: "$22.99", img: "meat-pie.jpg" },
+
+            // Noodles group
+            { name: "Guyro Laghman", uy: "گۈيرۇ لەغمەن", desc: "...", price: "$16.99", img: "guyro-laghman.jpg" },
+            { name: "Dry Fried Noodle", uy: "قورۇما چۆپ", desc: "...", price: "$17.99", img: "dry-fried-noodle.jpg" },
+            { name: "Suyro Laghman", uy: "سۈيرۇ لەغمەن", desc: "...", price: "$16.99", img: "suyro-laghman.jpg" },
+            { name: "Chop Fried Noodle", uy: "مارچان سۆومەن", desc: "...", price: "$17.99", img: "chop-fried-noodle.jpg" },
+            { name: "Eggplant Laghman", uy: "پىدىگەن لەغمەن", desc: "...", price: "$17.99", img: "eggplant-laghman.jpg" },
+            { name: "Hand-cut noodle", uy: "كەسكەن چۆپ", desc: "...", price: "$19.99", img: "hand-cut-noodle.jpg" },
+
+            // More mains (veggie/sides, soups, kebabs, big plate etc.) - add similarly
+            { name: "Big Plate Chicken", uy: "چوڭ تەخسە توخۇ قورۇمىسى", desc: "...", price: "$24.99 / $44.99", img: "big-plate-chicken.jpg" },
+            // ... continue for Spicy Chicken, Dry Fried Chicken, Uyghur Yogurt, Honey Cake, Chocolate Cake, Yogurt Shake, Soda, Black Tea, Uyghur Cake ...
+
+            // Example last one
+            { name: "Black Tea", uy: "قارا چاي", desc: "Hot black tea", price: "$3.99", img: "black-tea.jpg" }
+        ];
+
+        menuData.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'menu-item';
+            div.innerHTML = `
+                <img src="${baseImgUrl}${item.img}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/300x220?text=${item.name}';">
+                <div class="price">${item.price}</div>
+                <h3>${item.name}</h3>
+                <p class="uy">${item.uy}</p>
+                <p>${item.desc}</p>
+            `;
+            // Zoom on click
+            div.querySelector('img').addEventListener('click', () => {
+                document.getElementById('modalImg').src = div.querySelector('img').src;
+                document.getElementById('modal').style.display = 'flex';
+            });
+            menuContainer.appendChild(div);
+        });
+
+        // Close modal
+        document.querySelector('.close').addEventListener('click', () => {
+            document.getElementById('modal').style.display = 'none';
+        });
+        document.getElementById('modal').addEventListener('click', e => {
+            if (e.target.id === 'modal') document.getElementById('modal').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
