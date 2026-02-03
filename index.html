@@ -1,113 +1,891 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uyghur Eats | Modern Menu</title>
+    <meta name="description"
+        content="Authentic Uyghur cuisine featuring hand-pulled noodles, kebabs, and traditional dishes">
+    <title>Uyghur Kitchen - Traditional Uyghur Cuisine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=Lateef:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Your existing styles + minor tweaks for images */
-        .menu-item img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        .price {
-            background: #C8102E;
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin: 10px 0;
-        }
-        /* Add more from your previous CSS if needed */
-    </style>
 </head>
+
 <body>
+    <!-- Header -->
     <header class="header">
-        <h1>UYGHUR EATS</h1>
-        <p>A Taste of Tradition and Excellence</p>
+        <div class="container">
+            <div class="logo">
+                <img src="image/uyghureatslogo.png" alt="Uyghur Eats Logo" class="logo-img">
+            </div>
+            <nav class="nav">
+                <a href="#appetizers" class="nav-link">Appetizers</a>
+                <a href="#mains" class="nav-link">Main Dishes</a>
+                <a href="#soups" class="nav-link">Soups</a>
+                <a href="#desserts" class="nav-link">Desserts</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="menu-grid" id="menu-container"></main>
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slides">
+                <div class="slide active">
+                    <img src="image/slider_01.jpg" alt="Slide 1">
+                </div>
+                <div class="slide">
+                    <img src="image/slider_02.jpg" alt="Slide 2">
+                </div>
+                <div class="slide">
+                    <img src="image/slider_03.jpg" alt="Slide 3">
+                </div>
+                <div class="slide">
+                    <img src="image/slider_04.jpg" alt="Slide 4">
+                </div>
+                <div class="slide">
+                    <img src="image/slider_05.jpg" alt="Slide 5">
+                </div>
+            </div>
+            <div class="slider-nav">
+                <button class="slider-btn prev" aria-label="Previous slide">&#10094;</button>
+                <button class="slider-btn next" aria-label="Next slide">&#10095;</button>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+                <span class="dot" data-slide="4"></span>
+            </div>
+        </div>
+    </section>
 
+    <main class="main-content">
+        <div class="container">
+            <!-- Appetizers & Salads -->
+            <section id="appetizers" class="menu-section">
+                <div class="section-header">
+                    <h2 class="section-title">Appetizers & Salads</h2>
+                    <p class="section-subtitle">تاماقلىق ۋە سالاتلار</p>
+                </div>
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/samsa.png" alt="Samsa" loading="lazy">
+                            <div class="share-buttons">
+                                <button class="share-btn" data-platform="facebook" aria-label="Share on Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+                                <button class="share-btn" data-platform="x" aria-label="Share on X">
+                                    <i class="fab fa-x-twitter"></i>
+                                </button>
+                                <button class="share-btn" data-platform="instagram" aria-label="Share on Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </button>
+                                <button class="share-btn" data-platform="whatsapp" aria-label="Share on WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Samsa (1 pc)</h3>
+                                <span class="uyghur-name">سامسا</span>
+                            </div>
+                            <p class="dish-description">Special uyghur snack that is filled with beef and onion</p>
+                            <span class="dish-price">$2.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/176011472600-799.png" alt="Cucumber salad" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Cucumber Salad</h3>
+                                <span class="uyghur-name">تەرخەمەك سالات</span>
+                            </div>
+                            <p class="dish-description">Made of cucumber, tomato and garlic</p>
+                            <span class="dish-price">$5.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/bread.png" alt="Butter nan" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Butter Nan</h3>
+                                <span class="uyghur-name">نان</span>
+                            </div>
+                            <p class="dish-description">Traditional Uyghur-style flatbread, baked to a golden crisp with
+                                sesame on top</p>
+                            <span class="dish-price">$1.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/carrot_salat.png" alt="Carrot salad" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Carrot Salad</h3>
+                                <span class="uyghur-name">سەۋزە سالات</span>
+                            </div>
+                            <p class="dish-description">Made of carrot and chilies</p>
+                            <span class="dish-price">$6.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/katlima.png" alt="Pancake" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Pancake</h3>
+                                <span class="uyghur-name">قوتۇرماچ</span>
+                            </div>
+                            <p class="dish-description">Stir fried, layered, flaky flat bread</p>
+                            <span class="dish-price">$2.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/eggpalntsalat.png" alt="Eggplant salad" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Eggplant Salad</h3>
+                                <span class="uyghur-name">پېدىگەن سالات</span>
+                            </div>
+                            <p class="dish-description">Made of eggplant, tomato, soy sauce</p>
+                            <span class="dish-price">$7.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/roll.png" alt="Spring Roll" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Spring Roll</h3>
+                                <span class="uyghur-name">پۇرچاق تۈرمىلى</span>
+                            </div>
+                            <p class="dish-description">Made by wrapping a pastry sheet around a vegetarian filling</p>
+                            <span class="dish-price">$7.99</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Main Dishes -->
+            <section id="mains" class="menu-section">
+                <div class="section-header">
+                    <h2 class="section-title">Main Dishes</h2>
+                    <p class="section-subtitle">ئاساسىي تاماقلار</p>
+                </div>
+                <div class="menu-grid">
+                    <article class="menu-card featured">
+                        <div class="card-image">
+                            <img src="image/dapanji1.png" alt="Big Plate Chicken" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Big Plate Chicken</h3>
+                                <span class="uyghur-name">چوڭ تەخسە توخۇ قورۇمىسى</span>
+                            </div>
+                            <p class="dish-description">Chicken stew with potatoes and peppers simmered in a spicy
+                                sauce, served over hand-pulled flat noodles</p>
+                            <span class="dish-price">$24.99 / $44.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/lampbilav.png" alt="Stir Fried Meat" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Stir Fried Meat</h3>
+                                <span class="uyghur-name">قازان كاۋاپ</span>
+                            </div>
+                            <p class="dish-description">Stir fried beef with onion, cumin and seasonings (comes with
+                                rice on the side)</p>
+                            <span class="dish-price">$18.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/polo1.png" alt="Lamb Pilaf" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Lamb Pilaf</h3>
+                                <span class="uyghur-name">پولۇ</span>
+                            </div>
+                            <p class="dish-description">Traditional Uyghur food made of lamb, rice and carrot. Served
+                                with a side dish</p>
+                            <span class="dish-price">$20.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/fryed_lam_shank.png" alt="Fried Lamb Shank" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Fried Lamb Shank</h3>
+                                <span class="uyghur-name">قورۇغان قوي پاقالچىقى</span>
+                            </div>
+                            <p class="dish-description">A whole lamb shank, fried with onion and served with a nan</p>
+                            <span class="dish-price">$19.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/manta.png" alt="Manta" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Manta (5 Pcs)</h3>
+                                <span class="uyghur-name">مانتا</span>
+                            </div>
+                            <p class="dish-description">Steamed big dumplings filled with beef and onion, four pieces on
+                                a plate</p>
+                            <span class="dish-price">$14.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/palaktuhum.png" alt="Scallian Lamb" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Scallion Lamb</h3>
+                                <span class="uyghur-name">پىيازلىق گۆش قورىمىسى</span>
+                            </div>
+                            <p class="dish-description">Tender lamb stir-fried with fresh scallions in a savory,
+                                aromatic sauce</p>
+                            <span class="dish-price">$18.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/goshnan.png" alt="Meat Pie" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Meat Pie</h3>
+                                <span class="uyghur-name">گۆش نان</span>
+                            </div>
+                            <p class="dish-description">Crispy baked pie stuffed with seasoned beef and onion</p>
+                            <span class="dish-price">$22.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card featured">
+                        <div class="card-image">
+                            <img src="image/malaji.png" alt="Spicy Chicken" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Spicy Chicken</h3>
+                                <span class="uyghur-name">ئاچچىق توخۇ</span>
+                            </div>
+                            <p class="dish-description">Crispy chicken stir-fried with garlic and sesame</p>
+                            <span class="dish-price">$24.99 / $44.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card featured">
+                        <div class="card-image">
+                            <img src="image/ganbianji.png" alt="Dry Fried Chicken" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Dry Fried Chicken</h3>
+                                <span class="uyghur-name">قۇرۇق توخۇ قورۇمىسى</span>
+                            </div>
+                            <p class="dish-description">Golden, crunchy chicken pieces wok-fried with fresh peppers and
+                                sesame</p>
+                            <span class="dish-price">$24.99 / $44.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/kebeb.png" alt="Lamb Kebab" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Lamb Kebab (1 PC)</h3>
+                                <span class="uyghur-name">قوي كاۋاپ</span>
+                            </div>
+                            <p class="dish-description">Marinated lamb kebab</p>
+                            <span class="dish-price">$4.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/chicken_kebeb.png" alt="Chicken Kebab" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Chicken Kebab (1 PC)</h3>
+                                <span class="uyghur-name">توخۇ كاۋاپ</span>
+                            </div>
+                            <p class="dish-description">Marinated chicken kebab</p>
+                            <span class="dish-price">$4.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/piyazgosh.png" alt="Spinach With Egg" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Spinach With Egg</h3>
+                                <span class="uyghur-name">پالەك تۇخۇم</span>
+                            </div>
+                            <p class="dish-description">Gluten free rice noodles stir-fried with chicken, celery and
+                                special hot sauce</p>
+                            <span class="dish-price">$14.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/morgoshkorumisi.png" alt="Celery With Wood Ear" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Celery With Wood Ear</h3>
+                                <span class="uyghur-name">كەرەپشە مور قورىمىسى</span>
+                            </div>
+                            <p class="dish-description">Stir fried fresh celery with wood ears for a light, vegetarian
+                                dish</p>
+                            <span class="dish-price">$14.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/jangdukoru,isi.png" alt="Fried Green Bean" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Fried Green Bean</h3>
+                                <span class="uyghur-name">ئاچچىق پۇرچاق</span>
+                            </div>
+                            <p class="dish-description">Crispy green beans stir-fried with garlic and sesame</p>
+                            <span class="dish-price">$12.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/maladoufu.png" alt="Spicy Tofu" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Spicy Tofu</h3>
+                                <span class="uyghur-name">ئاچچىق دۇفۇ</span>
+                            </div>
+                            <p class="dish-description">Tofu with hot sauce</p>
+                            <span class="dish-price">$15.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/berengge_kelemchisi.png" alt="Shredded Potatoes" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Shredded Potatoes</h3>
+                                <span class="uyghur-name">بەرەڭگەقەلەمچىسى</span>
+                            </div>
+                            <p class="dish-description">Lightly seasoned shredded potatoes, pan-fried to a crisp</p>
+                            <span class="dish-price">$15.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/rice.png" alt="White Rice" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">White Rice</h3>
+                                <span class="uyghur-name">ئاق گۈرۈچ</span>
+                            </div>
+                            <p class="dish-description">Plain steamed rice</p>
+                            <span class="dish-price">$2.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/laghmen.png" alt="Guyro Laghman" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Guyro Laghman</h3>
+                                <span class="uyghur-name">گۈيرۇ لەغمەن</span>
+                            </div>
+                            <p class="dish-description">Hand-pulled noodles topped with a hot stir fry of beef, tomato,
+                                chilies, cabbage, black mushroom</p>
+                            <span class="dish-price">$16.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/ganbian011.png" alt="Dry Fried Noodle" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Dry Fried Noodle</h3>
+                                <span class="uyghur-name">قورۇما چۆپ</span>
+                            </div>
+                            <p class="dish-description">Hand-pulled noodles chopped and stir-fried with chinese chives,
+                                chilies and savory sauce</p>
+                            <span class="dish-price">$17.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/suyrulaghman.png" alt="Suyro Laghman" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Suyro Laghman</h3>
+                                <span class="uyghur-name">سۈيرۇ لەغمەن</span>
+                            </div>
+                            <p class="dish-description">Hand-pulled noodles topped with a hot stir fry of tiny chopped
+                                beef, tomato, chilies, celery, cabbage</p>
+                            <span class="dish-price">$16.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/marjan.png" alt="Chop Fried Noodle" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Chop Fried Noodle</h3>
+                                <span class="uyghur-name">مارجان سومەن</span>
+                            </div>
+                            <p class="dish-description">Hand-chopped noodles stir-fried with diced beef, onions, bell
+                                peppers and savory house sauce</p>
+                            <span class="dish-price">$17.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/pidiganlaghman.png" alt="Eggplant Laghman" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Eggplant Laghman</h3>
+                                <span class="uyghur-name">پىدىگەن لەغمەن</span>
+                            </div>
+                            <p class="dish-description">Hand-pulled noodles topped with a hot stir fry of beef,
+                                eggplant, tomato and chilies</p>
+                            <span class="dish-price">$17.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/uzuptashlap.png" alt="Hand-cut noodle" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Hand-cut Noodle</h3>
+                                <span class="uyghur-name">ئۈزۈپ تاشلاپ سومەن</span>
+                            </div>
+                            <p class="dish-description">Hand-cut noodle sheets stir-fried with vegetables and savory
+                                sauce</p>
+                            <span class="dish-price">$19.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/chaomifen.png" alt="Spicy Rice Noodle" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Spicy Rice Noodle</h3>
+                                <span class="uyghur-name">ئاچچىق گۈرۈچ چۆپى</span>
+                            </div>
+                            <p class="dish-description">Gluten free rice noodles stir-fried with chicken, celery and
+                                special hot sauce</p>
+                            <span class="dish-price">$18.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/akash.png" alt="White Noodle" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">White Noodle</h3>
+                                <span class="uyghur-name">ئاق چۆپ</span>
+                            </div>
+                            <p class="dish-description">Hand-pulled, freshly made noodles</p>
+                            <span class="dish-price">$2.99</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Soups -->
+            <section id="soups" class="menu-section">
+                <div class="section-header">
+                    <h2 class="section-title">Soups</h2>
+                    <p class="section-subtitle">شورپىلار</p>
+                </div>
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/ququre.png" alt="Dumpling Soup" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Dumpling Soup</h3>
+                                <span class="uyghur-name">چۆچۈرە</span>
+                            </div>
+                            <p class="dish-description">Soup with dumplings and cilantro</p>
+                            <span class="dish-price">$12.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/pachaksorpisi.png" alt="Lamb Shank Soup" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Lamb Shank Soup</h3>
+                                <span class="uyghur-name">قوي پاقالچىقى شورپىسى</span>
+                            </div>
+                            <p class="dish-description">Slow-simmered whole lamb shank in a rich, aromatic broth with
+                                vegetables and herbs</p>
+                            <span class="dish-price">$18.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/uyghur_soup.png" alt="Uyghur Soup" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Uyghur Soup</h3>
+                                <span class="uyghur-name">سۇيۇقئاش</span>
+                            </div>
+                            <p class="dish-description">Warm Uyghur-style soup featuring tender hand-pulled noodle
+                                pieces and rich, flavorful broth</p>
+                            <span class="dish-price">$12.99</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Desserts & Drinks -->
+            <section id="desserts" class="menu-section">
+                <div class="section-header">
+                    <h2 class="section-title">Desserts & Drinks</h2>
+                    <p class="section-subtitle">شىرىنلىك ۋە ئىچىملىكلەر</p>
+                </div>
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/yoghurt.png" alt="Uyghur Yogurt" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Uyghur Yogurt</h3>
+                                <span class="uyghur-name">قېتىق</span>
+                            </div>
+                            <p class="dish-description">Topped with walnut and fruit jam</p>
+                            <span class="dish-price">$5.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/honey.png" alt="Honey Cake" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Honey Cake</h3>
+                                <span class="uyghur-name">ھەسەل تورتى</span>
+                            </div>
+                            <p class="dish-description">Layered honey cake</p>
+                            <span class="dish-price">$5.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/dogh.png" alt="Yogurt Shake" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Yogurt Shake</h3>
+                                <span class="uyghur-name">دوغ</span>
+                            </div>
+                            <p class="dish-description">Pineapple, Guava, Mango, Pomagrate, Mix Fruit</p>
+                            <span class="dish-price">$4.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/chocholat.png" alt="Chocolate Cake" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Chocolate Cake</h3>
+                                <span class="uyghur-name">شاكىلات تورتى</span>
+                            </div>
+                            <p class="dish-description">Layered chocolate cake</p>
+                            <span class="dish-price">$5.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/uyghurcack.png" alt="Uyghur Cake" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Uyghur Cake</h3>
+                                <span class="uyghur-name">ئۇيغۇر تورتى</span>
+                            </div>
+                            <p class="dish-description">Flaky layered pastry filled with rich, creamy custard</p>
+                            <span class="dish-price">$5.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/soda.png" alt="Soda" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Soda</h3>
+                                <span class="uyghur-name">گازلىق سۇ</span>
+                            </div>
+                            <p class="dish-description">Coke (regular, zero, diet), Ginger Ale, Sprite, Fanta, mtn Dew
+                            </p>
+                            <span class="dish-price">$1.99</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image">
+                            <img src="image/balcktea.png" alt="Black Tea" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="dish-name">Black Tea</h3>
+                                <span class="uyghur-name">قارا چاي</span>
+                            </div>
+                            <p class="dish-description">Hot black tea</p>
+                            <span class="dish-price">$3.99</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
-        <p>© 2026 Uyghur Eats | Toronto, Ontario</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="image/uyghureatslogo.png" alt="Uyghur Eats Logo" class="logo-img">
+                </div>
+                <p class="footer-text">Authentic Uyghur Cuisine • Hand-Pulled Noodles • Traditional Recipes</p>
+                <p class="footer-copyright">© 2025 Uyghur Kitchen. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- Modal for zoom -->
-    <div id="modal" class="modal">
-        <span class="close">&times;</span>
-        <img id="modalImg" src="" alt="Dish">
-    </div>
-
-    <script src="script.js"></script>
     <script>
-        // script.js content (or inline)
-        const menuContainer = document.getElementById('menu-container');
-        const baseImgUrl = 'https://raw.githubusercontent.com/idirstughluk/uyghureatsmune/main/image/'; // Use 'main' branch
+        // Image Slider
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.slider-btn.prev');
+        const nextBtn = document.querySelector('.slider-btn.next');
+        let currentSlide = 0;
+        let slideInterval;
 
-        const menuData = [
-            // Appetizers - replace filenames with yours (e.g. samsa.jpg)
-            { name: "Samsa (1 pc)", uy: "سامسا", desc: "Special Uyghur snack filled with beef and onion", price: "$2.99", img: "samsa.jpg" },
-            { name: "Cucumber salad", uy: "تەرخەمەك سالات", desc: "Made of cucumber, tomato and garlic", price: "$5.99", img: "cucumber-salad.jpg" },
-            { name: "Butter nan", uy: "سېرىق ماي نان", desc: "Traditional Uyghur-style flatbread with sesame", price: "$1.99", img: "butter-nan.jpg" },
-            { name: "Carrot salad", uy: "سەۋزە سالات", desc: "Made of carrot and chilies", price: "$6.99", img: "carrot-salad.jpg" },
-            { name: "Pancake", uy: "فوتوزماج", desc: "Stir fried, layered, flaky flat bread", price: "$2.99", img: "pancake.jpg" },
-            { name: "Eggplant salad", uy: "بېدىرەن سالات", desc: "Made of eggplant, tomato, soy sauce", price: "$7.99", img: "eggplant-salad.jpg" },
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            if (index < 0) currentSlide = slides.length - 1;
 
-            // Main Dishes (group 1)
-            { name: "Stir Fried Meat", uy: "قازان كاۋاپ", desc: "Stir fried beef with onion, cumin... (rice on side)", price: "$18.99", img: "stir-fried-meat.jpg" },
-            { name: "Lamb Pilaf", uy: "پولۇ", desc: "Traditional Uyghur food with lamb, rice and carrot", price: "$20.99", img: "lamb-pilaf.jpg" },
-            { name: "Fried Lamb Shank", uy: "قورۇغان قوي پاقالچىقى", desc: "Whole lamb shank fried with onion, served with nan", price: "$19.99", img: "fried-lamb-shank.jpg" },
-            { name: "Manta (5 Pcs)", uy: "مانتا", desc: "Steamed big dumplings with beef and onion", price: "$14.99", img: "manta.jpg" },
-            { name: "Scallian Lamb", uy: "پىيازلىق گۆش قورىمىسى", desc: "Tender lamb stir-fried with scallions", price: "$18.99", img: "scallian-lamb.jpg" },
-            { name: "Meat Pie", uy: "گۆش نان", desc: "Crispy baked pie with seasoned beef and onion", price: "$22.99", img: "meat-pie.jpg" },
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
 
-            // Noodles group
-            { name: "Guyro Laghman", uy: "گۈيرۇ لەغمەن", desc: "...", price: "$16.99", img: "guyro-laghman.jpg" },
-            { name: "Dry Fried Noodle", uy: "قورۇما چۆپ", desc: "...", price: "$17.99", img: "dry-fried-noodle.jpg" },
-            { name: "Suyro Laghman", uy: "سۈيرۇ لەغمەن", desc: "...", price: "$16.99", img: "suyro-laghman.jpg" },
-            { name: "Chop Fried Noodle", uy: "مارچان سۆومەن", desc: "...", price: "$17.99", img: "chop-fried-noodle.jpg" },
-            { name: "Eggplant Laghman", uy: "پىدىگەن لەغمەن", desc: "...", price: "$17.99", img: "eggplant-laghman.jpg" },
-            { name: "Hand-cut noodle", uy: "كەسكەن چۆپ", desc: "...", price: "$19.99", img: "hand-cut-noodle.jpg" },
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
 
-            // More mains (veggie/sides, soups, kebabs, big plate etc.) - add similarly
-            { name: "Big Plate Chicken", uy: "چوڭ تەخسە توخۇ قورۇمىسى", desc: "...", price: "$24.99 / $44.99", img: "big-plate-chicken.jpg" },
-            // ... continue for Spicy Chicken, Dry Fried Chicken, Uyghur Yogurt, Honey Cake, Chocolate Cake, Yogurt Shake, Soda, Black Tea, Uyghur Cake ...
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
 
-            // Example last one
-            { name: "Black Tea", uy: "قارا چاي", desc: "Hot black tea", price: "$3.99", img: "black-tea.jpg" }
-        ];
+        function prevSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
 
-        menuData.forEach(item => {
-            const div = document.createElement('div');
-            div.className = 'menu-item';
-            div.innerHTML = `
-                <img src="${baseImgUrl}${item.img}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/300x220?text=${item.name}';">
-                <div class="price">${item.price}</div>
-                <h3>${item.name}</h3>
-                <p class="uy">${item.uy}</p>
-                <p>${item.desc}</p>
-            `;
-            // Zoom on click
-            div.querySelector('img').addEventListener('click', () => {
-                document.getElementById('modalImg').src = div.querySelector('img').src;
-                document.getElementById('modal').style.display = 'flex';
+        function startSlider() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startSlider();
+        }
+
+        // Event Listeners
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetInterval();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetInterval();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+                resetInterval();
             });
-            menuContainer.appendChild(div);
         });
 
-        // Close modal
-        document.querySelector('.close').addEventListener('click', () => {
-            document.getElementById('modal').style.display = 'none';
+        // Start auto-slide
+        startSlider();
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
-        document.getElementById('modal').addEventListener('click', e => {
-            if (e.target.id === 'modal') document.getElementById('modal').style.display = 'none';
+
+        // Header scroll effect
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for fade-in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.menu-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add Share Buttons to All Menu Cards
+        function addShareButtonsToCards() {
+            const menuCards = document.querySelectorAll('.menu-card');
+
+            menuCards.forEach(card => {
+                const cardImage = card.querySelector('.card-image');
+
+                // Skip if share buttons already exist
+                if (cardImage.querySelector('.share-buttons')) {
+                    return;
+                }
+
+                const shareButtons = document.createElement('div');
+                shareButtons.className = 'share-buttons';
+                shareButtons.innerHTML = `
+                    <button class="share-btn" data-platform="facebook" aria-label="Share on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                    <button class="share-btn" data-platform="x" aria-label="Share on X">
+                        <i class="fab fa-x-twitter"></i>
+                    </button>
+                    <button class="share-btn" data-platform="instagram" aria-label="Share on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </button>
+                    <button class="share-btn" data-platform="whatsapp" aria-label="Share on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </button>
+                `;
+
+                cardImage.appendChild(shareButtons);
+            });
+        }
+
+        // Social Share Functionality
+        function shareOnSocialMedia(platform, dishName, dishPrice) {
+            const url = window.location.href;
+            const text = `Check out ${dishName} at Uyghur Kitchen for ${dishPrice}!`;
+
+            let shareUrl = '';
+
+            switch (platform) {
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`;
+                    break;
+                case 'x':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+                    break;
+                case 'instagram':
+                    // Instagram doesn't support direct web sharing, so we'll copy the text
+                    navigator.clipboard.writeText(text + ' ' + url).then(() => {
+                        alert('Link copied! You can now paste it on Instagram.');
+                    });
+                    return;
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;
+                    break;
+            }
+
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+        }
+
+        // Initialize share buttons after DOM loads
+        document.addEventListener('DOMContentLoaded', function () {
+            addShareButtonsToCards();
+
+            // Add click event listeners to all share buttons
+            document.addEventListener('click', function (e) {
+                if (e.target.closest('.share-btn')) {
+                    const button = e.target.closest('.share-btn');
+                    const platform = button.getAttribute('data-platform');
+                    const card = button.closest('.menu-card');
+                    const dishName = card.querySelector('.dish-name').textContent;
+                    const dishPrice = card.querySelector('.dish-price').textContent;
+
+                    shareOnSocialMedia(platform, dishName, dishPrice);
+                }
+            });
         });
     </script>
 </body>
+
 </html>
