@@ -1,124 +1,270 @@
-// script.js - Populate menu + lightbox
+// Image Slider
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+const prevBtn = document.querySelector('.slider-btn.prev');
+const nextBtn = document.querySelector('.slider-btn.next');
+let currentSlide = 0;
+let slideInterval;
 
-document.addEventListener('DOMContentLoaded', () => {
-  const menuContainer = document.getElementById('menu-container');
+function showSlide(index) {
+    if (index >= slides.length) currentSlide = 0;
+    if (index < 0) currentSlide = slides.length - 1;
 
-  const menuItems = [
-    // APPETIZERS
-    {
-      name: "Samsa (1 pc)",
-      uyghur: "سامسا",
-      desc: "Special Uyghur snack that is filled with beef and onion",
-      price: "$2.99",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Samsa_from_Xinjiang.jpg/800px-Samsa_from_Xinjiang.jpg"  // Authentic baked Uyghur samsa
-    },
-    {
-      name: "Cucumber salad",
-      uyghur: "تەرخەمەك سالات",
-      desc: "Made of cucumber, tomato and garlic",
-      price: "$5.99",
-      img: "https://images.unsplash.com/photo-1627308594171-17ed03c86b05?auto=format&fit=crop&w=800&q=80"  // Fresh smashed cucumber salad style
-    },
-    {
-      name: "Butter nan",
-      uyghur: "سېرىق ماي نان",
-      desc: "Traditional Uyghur-style flatbread, baked to a golden crisp with sesame on top",
-      price: "$1.99",
-      img: "https://www.saveur.com/uploads/2016/07/26/uyghur-flatbread.jpg?auto=webp&optimize=high&quality=70&w=800"  // Classic Uyghur sesame nan/flatbread
-    },
-    {
-      name: "Carrot salad",
-      uyghur: "سەۋزە سالات",
-      desc: "Made of carrot and chilies",
-      price: "$6.99",
-      img: "https://jabberwockystew.net/wp-content/uploads/2013/05/Karls-Uyghur-Carrot-Salad.jpg"  // Shredded carrot Uyghur-style
-    },
-    {
-      name: "Pancake",
-      uyghur: "فوتوزماج",
-      desc: "Stir fried, layered, flaky flat bread",
-      price: "$2.99",
-      img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80"  // Layered flaky bread approximation
-    },
-    {
-      name: "Eggplant salad",
-      uyghur: "بېدىرەن سالات",
-      desc: "Made of eggplant, tomato, soy sauce",
-      price: "$7.99",
-      img: "https://www.dolanchick.com/wp-content/uploads/2022/06/grilled-eggplant-salad-uyghur.jpg"  // Grilled Uyghur eggplant salad
-    },
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
 
-    // MAIN DISHES (add all from your list - here's a sample; expand similarly)
-    {
-      name: "Guyro Laghman",
-      uyghur: "گۈيرۇ لەغمەن",
-      desc: "Hand-pulled noodles topped with hot stir fry of beef, tomato, chilies, cabbage, black mushroom",
-      price: "$16.99",
-      img: "https://vidarbergum.com/wp-content/uploads/2023/03/cheats-lagman-uyghur-style-lamb-with-noodles-1.jpg"  // Classic Uyghur laghman
-    },
-    {
-      name: "Lamb Pilaf",
-      uyghur: "پولۇ",
-      desc: "Traditional Uyghur food made of lamb, rice and carrot. Served with a side dish",
-      price: "$20.99",
-      img: "https://blog.themalamarket.com/wp-content/uploads/2020/10/big-plate-chicken-uyghur-xinjiang.jpg"  // Pilaf-style rice dish
-    },
-    {
-      name: "Big Plate Chicken",
-      uyghur: "چوڭ تەخسە توخۇ قورۇمىسى",
-      desc: "Chicken stew with potatoes and peppers simmered in a spicy sauce, served over hand-pulled flat noodles",
-      price: "$24.99 / $44.99",
-      img: "https://food52.com/recipes/89642-turbo-charged-xinjiang-big-plate-chicken"  // Iconic big plate chicken photo
-    },
-    // ... Add the rest similarly (Fried Lamb Shank, Manta, Scallian Lamb, etc.)
-    // For example:
-    {
-      name: "Fried Lamb Shank",
-      uyghur: "قورۇغان قوي پاقالچىقى",
-      desc: "A whole lamb shank, fried with onion and served with a nan",
-      price: "$19.99",
-      img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80"  // Braised lamb shank approximation
-    },
-    // Continue for all mains, soups, kebabs, desserts/drinks...
-    // Desserts example:
-    {
-      name: "Honey Cake",
-      uyghur: "ھەسەل تورتى",
-      desc: "Layered honey cake",
-      price: "$5.99",
-      img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80"  // Layered honey cake
-    },
-    {
-      name: "Black Tea",
-      uyghur: "قارا چاي",
-      desc: "Hot black tea",
-      price: "$3.99",
-      img: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80"  // Traditional tea
-    }
-    // Add remaining items from your list here...
-  ];
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+}
 
-  menuItems.forEach(item => {
-    const div = document.createElement('div');
-    div.className = 'menu-item';
-    div.innerHTML = `
-      <img src="${item.img}" alt="${item.name}">
-      <div class="price">${item.price}</div>
-      <h3>${item.name}</h3>
-      <p class="uy">${item.uyghur}</p>
-      <p>${item.desc}</p>
-    `;
-    // Click to enlarge image
-    div.addEventListener('click', () => {
-      const modal = document.getElementById('modal');
-      document.getElementById('modalImg').src = item.img;
-      modal.style.display = 'flex';
+function nextSlide() {
+    currentSlide++;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide--;
+    showSlide(currentSlide);
+}
+
+function startSlider() {
+    slideInterval = setInterval(nextSlide, 5000);
+}
+
+function resetInterval() {
+    clearInterval(slideInterval);
+    startSlider();
+}
+
+// Event Listeners
+if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetInterval();
     });
-    menuContainer.appendChild(div);
-  });
+}
 
-  // Close modal
-  document.querySelector('.close').addEventListener('click', () => {
-    document.getElementById('modal').style.display = 'none';
-  });
+if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetInterval();
+    });
+}
+
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+        resetInterval();
+    });
+});
+
+// Start auto-slide
+startSlider();
+
+// Smooth scroll for navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            // Close mobile menu if open
+            const nav = document.querySelector('.nav');
+            const mobileBtnIcon = document.querySelector('.mobile-menu-btn i');
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                mobileBtnIcon.classList.remove('fa-times');
+                mobileBtnIcon.classList.add('fa-bars');
+            }
+
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Header scroll effect
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// Intersection Observer for fade-in animation
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.menu-card').forEach(card => {
+    observer.observe(card);
+});
+
+// Add Share Buttons to All Menu Cards
+function addShareButtonsToCards() {
+    const menuCards = document.querySelectorAll('.menu-card');
+
+    menuCards.forEach(card => {
+        const cardImage = card.querySelector('.card-image');
+
+        // Skip if share buttons already exist
+        if (cardImage.querySelector('.share-buttons')) {
+            return;
+        }
+
+        const shareButtons = document.createElement('div');
+        shareButtons.className = 'share-buttons';
+        shareButtons.innerHTML = `
+            <button class="share-btn" data-platform="facebook" aria-label="Share on Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </button>
+            <button class="share-btn" data-platform="x" aria-label="Share on X">
+                <i class="fab fa-x-twitter"></i>
+            </button>
+            <button class="share-btn" data-platform="instagram" aria-label="Share on Instagram">
+                <i class="fab fa-instagram"></i>
+            </button>
+            <button class="share-btn" data-platform="whatsapp" aria-label="Share on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </button>
+        `;
+
+        cardImage.appendChild(shareButtons);
+    });
+}
+
+// Social Share Functionality
+function shareOnSocialMedia(platform, dishName, dishPrice) {
+    const url = window.location.href;
+    const text = `Check out ${dishName} at Uyghur Kitchen for ${dishPrice}!`;
+
+    let shareUrl = '';
+
+    switch (platform) {
+        case 'facebook':
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`;
+            break;
+        case 'x':
+            shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+            break;
+        case 'instagram':
+            // Instagram doesn't support direct web sharing, so we'll copy the text
+            navigator.clipboard.writeText(text + ' ' + url).then(() => {
+                alert('Link copied! You can now paste it on Instagram.');
+            });
+            return;
+        case 'whatsapp':
+            shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;
+            break;
+    }
+
+    if (shareUrl) {
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+}
+
+// Initialize features after DOM loads
+document.addEventListener('DOMContentLoaded', function () {
+    // Share Buttons
+    addShareButtonsToCards();
+
+    document.addEventListener('click', function (e) {
+        if (e.target.closest('.share-btn')) {
+            const button = e.target.closest('.share-btn');
+            const platform = button.getAttribute('data-platform');
+            const card = button.closest('.menu-card');
+            const dishName = card.querySelector('.dish-name').textContent;
+            const dishPrice = card.querySelector('.dish-price').textContent;
+
+            shareOnSocialMedia(platform, dishName, dishPrice);
+        }
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+
+    if (mobileMenuBtn && nav) {
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (nav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
+    // Search Functionality
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const menuCards = document.querySelectorAll('.menu-card');
+
+            menuCards.forEach(card => {
+                const dishName = card.querySelector('.dish-name').textContent.toLowerCase();
+                const dishDesc = card.querySelector('.dish-description').textContent.toLowerCase();
+                const uyghurName = card.querySelector('.uyghur-name').textContent;
+
+                if (dishName.includes(searchTerm) || dishDesc.includes(searchTerm) || uyghurName.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    // Re-trigger animation if needed
+                    card.classList.add('visible');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const html = document.documentElement;
+    const themeIcon = darkModeToggle ? darkModeToggle.querySelector('i') : null;
+
+    // Check saved preference
+    if (localStorage.getItem('theme') === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+        if (themeIcon) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+    }
+
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', () => {
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                if (themeIcon) {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                if (themeIcon) {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
+            }
+        });
+    }
 });
